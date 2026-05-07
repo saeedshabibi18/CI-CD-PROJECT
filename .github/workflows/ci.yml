@@ -9,7 +9,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest        # What: Use a fresh Ubuntu machine provided by GitHub
-                                 # Why: A clean machine ensures no leftover files affect your build
+                                  # Why: A clean machine ensures no leftover files affect your build
 
     steps:
       - name: Checkout code       # What: Download your repo code onto the machine
@@ -25,3 +25,4 @@ jobs:
 
       - name: Run tests           # What: Execute your test suite
         run: npm test             # Why: This is the whole point — automatically verify your code works
+        # null 
