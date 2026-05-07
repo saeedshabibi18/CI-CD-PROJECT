@@ -1,5 +1,5 @@
 const { add } = require('./math');
 
-test('adds 2 + 3 to equal 5', () => {
-  expect(add(2, 3)).toBe(99);
+test('adds 2 + 8 to equal 10', () => {
+  expect(add(2, 8)).toBe(10);
 });
