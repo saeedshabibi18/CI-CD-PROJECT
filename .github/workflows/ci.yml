@@ -4,7 +4,7 @@ name: My First CI Pipeline        # What: Display name shown in GitHub UI
 on:
   push:
     branches: [ main ]            # What: Trigger this pipeline on every push to main
-                                  # Why: Automatically runs tests whenever you push new code
+    # Why: Automatically runs tests whenever you push new code
 
 jobs:
   test:
@@ -24,4 +24,4 @@ jobs:
         run: npm install            # Why: Install Jest and other packages — same as you do locally
 
       - name: Run tests           # What: Execute your test suite
-        run: npm test
+        run: npm test             # Why: This is the whole point — automatically verify your code works
