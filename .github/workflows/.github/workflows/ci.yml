@@ -1,0 +1,27 @@
+name: My First CI Pipeline        # What: Display name shown in GitHub UI
+                                  # Why: Helps you identify this pipeline
+
+on:
+  push:
+    branches: [ main ]            # What: Trigger this pipeline on every push to main
+                                  # Why: Automatically runs tests whenever you push new code
+
+jobs:
+  test:
+    runs-on: ubuntu-latest        # What: Use a fresh Ubuntu machine provided by GitHub
+     # Why: A clean machine ensures no leftover files affect your build
+
+    steps:
+      - name: Checkout code       # What: Download your repo code onto the machine
+        uses: actions/checkout@v4 # Why: The runner machine starts empty — it needs your code first
+
+      - name: Setup Node.js       # What: Install Node.js on the runner machine
+        uses: actions/setup-node@v4 # Why: Ubuntu doesn't have your Node version by default
+        with:
+          node-version: '20'
+
+      - name: Install dependencies  # What: Run npm install on the runner
+        run: npm install            # Why: Install Jest and other packages — same as you do locally
+
+      - name: Run tests           # What: Execute your test suite
+        run: npm test
